@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace命名空间，保证在调用statement标签时的唯一性 -->
+<mapper namespace="com.lunxuu.estore.dao.UserDao">
+	<!-- 全局的二级缓存默认是开启的，但是如果要想二级缓存生效就必须手动声明缓存标签 -->
+	<cache />
+	<insert id="register" parameterType="User">
+		insert into `user` values(null, #{nickname}, #{username}, #{password}, #{role})
+	</insert>
+	<select id="toLogin" resultType="User">
+		select * from `user` where username=#{username} and password=#{password}
+	</select>
+</mapper>
+  
