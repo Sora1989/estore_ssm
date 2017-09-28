@@ -28,8 +28,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean iRegistered(User user) {
-		return userDao.isRegistered(user);
+	public Integer iRegistered(User user) {
+		return userDao.isRegistered(user.getUsername());
 	}
 
 }

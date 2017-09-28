@@ -7,3 +7,4 @@
 <script type="text/javascript" src="${root}/js/common.js"></script>
 <script type="text/javascript" src="${root}/js/user.js"></script>
 <script type="text/javascript" src="${root}/js/index.js"></script>
+<script type="text/javascript" src="${root}/js/jquery-1.8.3.js"></script>

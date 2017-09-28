@@ -7,5 +7,5 @@ public interface UserService {
 
 	User toLogin(String username, String password);
 
-	boolean iRegistered(User user);
+	Integer iRegistered(User user);
 }

@@ -13,5 +13,8 @@
 	<select id="toLogin" resultType="User">
 		select * from `user` where username=#{username} and password=#{password}
 	</select>
+	<select id="isRegistered" resultType="java.lang.Integer">
+		SELECT  * FROM  "user" WHERE  username=#{username}
+	</select>
 </mapper>
   

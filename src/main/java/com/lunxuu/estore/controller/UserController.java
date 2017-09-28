@@ -79,7 +79,7 @@ UserController {
 
 	@RequestMapping("register")
 	public String register(@RequestBody User user){
-		if (!userService.iRegistered(user)) {
+		if (userService.iRegistered(user) == 1) {
 			Integer result = userService.register(user);
 			if (result == 1){
 				return "login";

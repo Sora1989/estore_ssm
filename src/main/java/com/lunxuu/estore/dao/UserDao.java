@@ -14,5 +14,5 @@ public interface UserDao{
 	User toLogin(@Param("username") String username,
 			@Param("password") String password);
 
-	boolean isRegistered(User user);
+	Integer isRegistered(String username);
 }

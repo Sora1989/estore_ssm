@@ -145,7 +145,7 @@ function checkName(val) {
 						<tr>
 							<td>&nbsp;</td>
 							<td align="left">
-								<input name="Submit" type="submit" value="" class="us_Submit_reg">
+								<input id="submit-button" name="Submit" type="submit" value="" class="us_Submit_reg">
 							</td>
 						</tr>
 						<tr>
@@ -158,5 +158,30 @@ function checkName(val) {
 		</div>
 	</div>
 	<%@include file="inc/footer.jsp"%>
+
+<script type="text/javascript">
+	$("#submit-button").click(function () {
+		var data = $("#myform").serializeArray();//自动将form表单封装成json
+//		$.ajax({
+//			 type: "Post", //访问WebService使用Post方式请求
+//			 contentType: "application/json", //WebService 会返回Json类型
+//			 url: "/user/register", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+//			 data: data, //这里是要传递的参数，格式为 data: "{paraName:paraValue}",下面将会看到
+//			 dataType: 'json',
+//			 success: function (result) { //回调函数，result，返回值
+//			 	alert(result);
+//			 }
+//		});
+
+        $.post("/user/register", data, RateArticleSuccess, "json");
+
+        function RateArticleSuccess(result) {
+            alert(result);
+        }
+    });
+
+
+
+</script>
 </body>
 </html>
